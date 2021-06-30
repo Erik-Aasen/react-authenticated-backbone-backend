@@ -26,13 +26,22 @@ mongoose.connect(`${process.env.PART1}${process.env.USERNAME}:${process.env.PASS
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:3000", credentials: true }))
+
+app.set("trust proxy", 1);
+
 app.use(
   session({
     secret: `${process.env.SESSIONSECRET}`,
     resave: true,
     saveUninitialized: true,
+    cookie: {
+      sameSite: "none",
+      secure: true,
+      maxAge: 1000 * 60 * 5 // 5 minutes
+    }
   })
 );
+
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
