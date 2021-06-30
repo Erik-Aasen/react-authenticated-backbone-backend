@@ -19,3 +19,6 @@
         "strictNullChecks": true
     },
 }
+
+    "build": "tsc -p .",
+        "start": "node ./build/dist/index.js",
