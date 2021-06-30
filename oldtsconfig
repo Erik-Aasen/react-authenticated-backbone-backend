@@ -21,4 +21,8 @@
 }
 
     "build": "tsc -p .",
-        "start": "node ./build/dist/index.js",
+
+
+    "start": "node ./build/dist/index.js",
+    "heroku-prebuild": "npm install",
+    "dev": "ts-node src/index.ts"
