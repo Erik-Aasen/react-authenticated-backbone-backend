@@ -27,7 +27,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: "https://react-auth-backbone-frontend.herokuapp.com", credentials: true }))
 
-// app.set("trust proxy", 1);
+app.set("trust proxy", 1);
 
 app.use(
   session({
@@ -35,7 +35,7 @@ app.use(
     resave: true,
     saveUninitialized: true,
     cookie: {
-      // sameSite: "none",
+      sameSite: "none",
       secure: true,
       maxAge: 1000 * 60 * 5 // 5 minutes
     }
