@@ -25,7 +25,7 @@ mongoose.connect(`${process.env.PART1}${process.env.USERNAME}:${process.env.PASS
 // Middleware
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }))
+app.use(cors({ origin: "https://festive-meitner-2ae6d5.netlify.app", credentials: true }))
 
 app.set("trust proxy", 1);
 
